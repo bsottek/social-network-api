@@ -20,10 +20,17 @@ router
     .route('/:id')
     .get(getThoughtById);
 
+//remove thoughts from user
 router
     .route('/:thoughtId/:userId')
-    .put(updateThought)
     .delete(removeThought);
+
+
+//get single thought by id
+router
+    .route('/:thoughtId')
+    .get(getThoughtById)
+    .put(updateThought);
 
 // /api/thoughts/thoughtId/reactions
 router
